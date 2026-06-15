@@ -1,11 +1,12 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { setAuth } from '@/lib/auth';
 import Logo from '@/components/Logo';
 
-export default function AuthCallbackPage() {
+function CallbackHandler() {
   const router       = useRouter();
   const searchParams = useSearchParams();
 
@@ -39,5 +40,18 @@ export default function AuthCallbackPage() {
       <div className="w-6 h-6 border-2 border-purple-500 border-t-transparent rounded-full animate-spin" />
       <p className="text-sm text-gray-400">Autenticando com Google...</p>
     </main>
+  );
+}
+
+export default function AuthCallbackPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen bg-brand-light flex flex-col items-center justify-center gap-4">
+        <div className="w-6 h-6 border-2 border-purple-500 border-t-transparent rounded-full animate-spin" />
+        <p className="text-sm text-gray-400">Carregando...</p>
+      </main>
+    }>
+      <CallbackHandler />
+    </Suspense>
   );
 }
