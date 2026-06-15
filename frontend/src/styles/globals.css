@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-brand-light text-brand-dark antialiased;
+  }
+}
+
+@layer components {
+  /* Input padrão com foco roxo */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 bg-white
+           text-sm text-gray-800 placeholder-gray-400
+           transition-all duration-200 outline-none
+           focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20;
+  }
+
+  /* Botão gradiente principal */
+  .btn-primary {
+    @apply w-full py-3 px-6 rounded-xl font-semibold text-white text-sm
+           bg-brand-gradient shadow-md
+           hover:opacity-90 active:scale-[0.98]
+           transition-all duration-200 cursor-pointer;
+  }
+
+  /* Botão outline secundário */
+  .btn-secondary {
+    @apply w-full py-3 px-6 rounded-xl font-semibold text-sm
+           border border-gray-200 bg-white text-gray-700
+           hover:border-brand-purple hover:text-brand-purple
+           transition-all duration-200 cursor-pointer;
+  }
+
+  /* Card de conteúdo */
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6;
+  }
+
+  /* Pill de categoria */
+  .pill {
+    @apply px-4 py-1.5 rounded-full text-sm font-medium border border-gray-200
+           text-gray-600 hover:border-brand-purple hover:text-brand-purple
+           transition-all duration-200 cursor-pointer;
+  }
+
+  .pill-active {
+    @apply px-4 py-1.5 rounded-full text-sm font-medium
+           bg-brand-gradient text-white cursor-pointer;
+  }
+}
