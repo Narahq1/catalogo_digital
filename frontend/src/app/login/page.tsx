@@ -91,7 +91,7 @@ export default function LoginPage() {
 
           {/* Botão Google — funcional */}
           <a
-            href="http://localhost:4000/api/auth/google"
+            href={`${process.env.NEXT_PUBLIC_API_URL?.replace('/api', '')}/api/auth/google`}
             className="w-full py-3 px-6 rounded-xl text-sm font-medium border border-gray-200
                        bg-white text-gray-700 flex items-center justify-center gap-2
                        hover:bg-gray-50 hover:border-gray-300 transition-all duration-200"
