@@ -1,4 +1,4 @@
-# Catálogo Digital Minimalista
+![coloque pe](image.png)# Catálogo Digital Minimalista
 
 Sistema completo com Frontend (Next.js + Tailwind), Backend (Node.js + Express) e Banco de Dados (PostgreSQL).
 
